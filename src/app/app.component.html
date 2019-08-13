@@ -14,9 +14,9 @@
       </mat-card-content>
       <mat-card-actions>
         <mat-form-field>
-          <input matInput placeholder="Enter total">
+          <input matInput placeholder="Enter total" #total>
         </mat-form-field>
-        <button class="generator" mat-button>Generate New Numbers</button>
+        <button class="generator" mat-button (click)="generateNumbers(total.value)">Generate New Numbers</button>
       </mat-card-actions>
     </mat-card>
   </div>
@@ -24,18 +24,8 @@
     <div class="sort-btns"><button mat-button><mat-icon svgIcon="down"></mat-icon></button><button mat-button><mat-icon svgIcon="up"></mat-icon></button></div>
     <div class="numbers-list">
        <mat-selection-list #numbers>
-      <mat-list-option *ngFor="let shoe of typesOfShoes; index as i">
-       {{i + 1}}. {{shoe}}
-      </mat-list-option>
-    </mat-selection-list>
-    <mat-selection-list #numbers>
-      <mat-list-option *ngFor="let shoe of typesOfShoes; index as i">
-       {{i + 1}}. {{shoe}}
-      </mat-list-option>
-    </mat-selection-list>
-    <mat-selection-list #numbers>
-      <mat-list-option *ngFor="let shoe of typesOfShoes; index as i">
-       {{i + 1}}. {{shoe}}
+      <mat-list-option *ngFor="let number of numberList; index as i">
+       {{i + 1}}. {{number}}
       </mat-list-option>
     </mat-selection-list>
     </div>
