@@ -34,12 +34,12 @@ export class AppComponent implements OnInit {
     this.minimumNumber = this.getNumber('min');
     this.maximumNumber = this.getNumber('max');
     this.sortedArr = quickSort(Array.from(this.numberList), 0, this.numberList.size - 1);
-    console.log((performance.now() - t0) + ' milliseconds.');
+    console.log(performance.now() - t0 + ' milliseconds.');
   }
-  getNumber = (value) => Math[value](...Array.from(this.numberList));
+  getNumber = value => Math[value](...Array.from(this.numberList));
 
-  sortNumbers = (order) => {
-    if (order === 'ASC' ) {
+  sortNumbers = order => {
+    if (order === 'ASC') {
       const arr = [...this.sortedArr];
       const clone = arr.reverse();
       this.numberList = new Set(clone);
@@ -48,4 +48,16 @@ export class AppComponent implements OnInit {
     this.numberList = new Set(this.sortedArr);
   }
 
+  downloadNumbers = (content: Set<any>, fileName, contentType) => {
+    const brk = Array.from(content)
+      .map(no => '075' + no)
+      .toString()
+      .split(',');
+    const newContent = brk.join(' \n');
+    const a = document.createElement('a');
+    const file = new Blob([newContent], { type: contentType });
+    a.href = URL.createObjectURL(file);
+    a.download = fileName;
+    a.click();
+  }
 }
