@@ -6,7 +6,6 @@
     "start": "ng serve -o",
     "build": "ng build",
     "test": "ng test --code-coverage --browsers=ChromeHeadless",
-    "coverage": "nyc report --reporter=text-lcov | coveralls",
     "lint": "ng lint",
     "e2e": "ng e2e"
   },
