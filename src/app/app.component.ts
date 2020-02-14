@@ -1,6 +1,6 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
-import { MatIconRegistry, MatList } from '@angular/material';
+import { MatIconRegistry } from '@angular/material';
 
 @Component({
   selector: 'app-root',
@@ -8,8 +8,10 @@ import { MatIconRegistry, MatList } from '@angular/material';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-  @ViewChild('list') list: MatList;
-  constructor(private matIconRegistry: MatIconRegistry, private domSanitizer: DomSanitizer) {
+  constructor(
+    private matIconRegistry: MatIconRegistry,
+    private domSanitizer: DomSanitizer
+  ) {
     this.matIconRegistry.addSvgIcon('down', this.domSanitizer.bypassSecurityTrustResourceUrl('../assets/icons/caret-down.svg'));
     this.matIconRegistry.addSvgIcon('up', this.domSanitizer.bypassSecurityTrustResourceUrl('../assets/icons/sort-up.svg'));
   }

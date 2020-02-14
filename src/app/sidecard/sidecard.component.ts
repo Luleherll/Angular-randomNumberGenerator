@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, Output, EventEmitter } from '@angular/core';
 import BST from '../helpers/BinarySearchTree';
 
 
@@ -58,6 +58,6 @@ export class SidecardComponent {
       this.BST.emit(bst);
       this.total = 11000;
       this.generatedNums = numbers.length;
-    };
+    }
 }
 

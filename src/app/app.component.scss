@@ -2,6 +2,7 @@
 .wrapper {
   padding: 2%;
 }
+
 .numbers-list {
   float:left;
   overflow-y: auto;
@@ -10,22 +11,11 @@
   width: 100%;
   border-radius: 5px;
 }
-span {
-  display: block;
-}
-mat-list-item {
-  color: #424242 !important;
-  &:hover {
-    background-color: gray;
-  }
-}
+
 .sort-btns {
   float: right;
 }
-.generator {
-  margin-left: 27px !important;
-  background-color: gray;
-}
+
 mat-card-content {
   margin-left: 16px;
 }
