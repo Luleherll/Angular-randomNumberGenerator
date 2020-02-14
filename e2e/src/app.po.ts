@@ -6,6 +6,14 @@ export class AppPage {
   }
 
   getTitleText() {
-    return element(by.css('app-root h1')).getText() as Promise<string>;
+    return element(by.css('app-root mat-toolbar span')).getText() as Promise<string>;
+  }
+
+  sidecard() {
+    return element(by.css('app-sidecard'));
+  }
+
+  generateNumbers() {
+    return this.sidecard().element(by.css('.generator')).click();
   }
 }
