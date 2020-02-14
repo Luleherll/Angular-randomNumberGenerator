@@ -6,12 +6,17 @@ describe('workspace-project App', () => {
 
   beforeEach(() => {
     page = new AppPage();
+    page.navigateTo();
   });
 
-  it('should display welcome message', () => {
-    page.navigateTo();
-    expect(page.getTitleText()).toEqual('Welcome to randomNumberGenerator!');
+  it('should display a heading', () => {
+    expect(page.getTitleText()).toEqual('Phone number Generator');
   });
+
+  // it('should generate numbers', () => {
+  //   page.generateNumbers();
+  //   expect(page.getTotalNumbers()).toEqual('djd')
+  // });
 
   afterEach(async () => {
     // Assert that there are no errors emitted from the browser

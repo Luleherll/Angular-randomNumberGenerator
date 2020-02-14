@@ -1,2 +1,18 @@
-
+<mat-toolbar>
+  <span>Phone number Generator</span>
+</mat-toolbar>
+<div fxLayout="row" fxLayout.lt-sm="column" class="wrapper">
+  <app-sidecard fxFlex (newNumbers)="getNumbers($event)" (BST)="getDESC($event)"></app-sidecard>
+  <div fxFlex="70" class="wrapper">
+    <button id="download-btn" mat-button (click)="downloadNumbers(numberList, 'phone-numbers.txt', 'application/json')">Download</button>
+    <div class="sort-btns"><button mat-button (click)="sort('DESC')"><mat-icon svgIcon="down"></mat-icon></button><button mat-button  (click)="sort('ASC')"><mat-icon svgIcon="up"></mat-icon></button></div>
+    <div class="numbers-list">
+        <mat-list role="list" #list>
+            <mat-list-item class="items"  role="listitem" *ngFor="let number of numberList; index as i">
+                {{i + 1}}: 0{{number}}
+            </mat-list-item>
+        </mat-list>
+    </div>
+  </div>
+</div>
 
